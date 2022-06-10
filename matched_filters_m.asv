@@ -1,0 +1,24 @@
+kStep = 0.001;
+k = -2:kStep:(2-kStep);
+v1 = 0.5*rand(size(k))
+v2 = 0.5*rand(size(k))
+
+s1 = 2.^(-k.^2./2);
+s2 = 2.^(-k.^2./4)
+sig1 = s1 + v1;
+r1 = snr(sig1, v1)
+
+sig2 = s2 + v2;
+r2 = snr(sig2, v2)
+
+subplot(2,1,1)
+plot(k, s1, k, s2)
+subplot(2,1,2)
+plot(k, sig1, k, sig2)
+
+b = conj(sig1(end:-1:1));
+y = filter(b,1,sig2);
+subplot(3,1,)
+
+%wav = getMatchedFilter(waveform);
+

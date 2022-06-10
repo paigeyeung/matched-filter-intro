@@ -5,6 +5,7 @@ f0 = 10;
 T = 1;
 t = 0:1/fs:T-1/fs;
 pls = cos(2*pi*f0*t);
+%pls = exp(-t.^2 ./2);
 
 t0 = 5;
 dt = 2*T;

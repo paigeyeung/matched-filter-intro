@@ -1,5 +1,5 @@
 x = linspace(-2*pi, 2*pi);
-a = 0.2*rand(size(x));
+a = 0.5*rand(size(x));
 plot(a)
 hold on
 
